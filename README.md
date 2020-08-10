@@ -42,9 +42,18 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 * User will be able to navigate through pages (Home, Saved, Settings)
 * User will be able to view a Verse of the day on the home page
 * User will be able to leave feedback, change notifications, and share app in the settings
+
+## Time Priority Matrix
+| Component                    | Priority | Estimated Time | Time Invested |
+| --------------------------   | :----:   |  :-----------: | :-----------: |
+| comp          |    H     |      0hrs      |               |                                                 
+
+| Total                        |          |     0hrs     |               |   
 ## MVP
 
 ## Post-MVP
+* Use spotify API/widget to generate a song based on mood
+* Use YouVersion API to generate a Reading Plan/Devotional based on mood
 
 ## Components
 
