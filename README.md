@@ -64,11 +64,26 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 | Setup voice recording | H | 4hrs | 0 |
 | Total                        |          |     66hrs     |               |   
 ## MVP
-
+* Verse given based on mood of user
+* Saved page with saved verses of user
+* About Page
+* Feedback Form
+*
 ## Post-MVP
 * Use spotify API/widget to generate a song based on mood
 * Use YouVersion API to generate a Reading Plan/Devotional based on mood
+* Verse of the day on home page
+* Full fleshed settings page
+* Generate spotify playlist based on saved songs
+* Deploy for download on phone
+* Share app with friends
 
+
+### Post Post-MVP
+* Tutorial page for how to use app
+* Change version of bible (KJV, NIV, etc)
+* Change language of app
+* Animate Jesus narrating the verse that's given
 ## Components
 
 ## Additional Libraries
