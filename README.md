@@ -46,8 +46,8 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 ## Time Priority Matrix
 | Component                    | Priority | Estimated Time | Time Invested |
 | --------------------------   | :----:   |  :-----------: | :-----------: |
-| comp          |    H     |      0hrs      |               |                                                 
-
+| Backend Setup(Routes, Controllers, Schema, Seed)          |    H     |      4hrs      |   |
+| RESTful Api Calls            | H | 3hrs | 0 |
 | Total                        |          |     0hrs     |               |   
 ## MVP
 
@@ -58,7 +58,7 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 ## Components
 
 ## Additional Libraries
-
+    https://www.openbible.info/topics/adventure
 ## Code Snippet
 
 ## Bugs & Fixes
