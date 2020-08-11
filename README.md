@@ -46,11 +46,11 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 ## Time Priority Matrix
 | Component                    | Priority | Estimated Time | Time Invested |
 | --------------------------   | :----:   |  :-----------: | :-----------: |
-| Backend Setup(Routes, Controllers, Schema, Seed)          |    H     |      4hrs      |  0 |
+| Backend Setup(Routes, Controllers, Schema, Seed)          |    H     |      4hrs      |  3hrs |
 | User routes/controllers | H | 3hrs | 0 |
 |  User schema / seed | H | 1hr | 0|
 | Deploy backend | H | 2hrs | o |
-| Backend research/ API research | H | 8hrs | 0 |
+| Backend research/ API research | H | 8hrs | 4hrs |
 | Deepaffects setup | M | 4hrs | 0 |
 | RESTful Api Calls            | H | 3hrs | 0 |
 | Frontend research | H | 3hrs | 0 |
@@ -88,6 +88,10 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 
 ## Additional Libraries
     https://www.openbible.info/topics/adventure
+    https://oliver.readme.io/docs/get-results-after-completion
+    https://good-vibrations.nl/contact/
+    https://developers.vokaturi.com/using/c-sample-batch
+    https://developers.deepaffects.com/app/dashboard
 ## Code Snippet
 
 ## Bugs & Fixes
