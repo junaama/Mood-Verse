@@ -46,7 +46,7 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 ## Time Priority Matrix
 | Component                    | Priority | Estimated Time | Time Invested |
 | --------------------------   | :----:   |  :-----------: | :-----------: |
-| Backend Setup(Routes, Controllers, Schema, Seed)          |    H     |      4hrs      |   |
+| Backend Setup(Routes, Controllers, Schema, Seed)          |    H     |      4hrs      |  0 |
 | User routes/controllers | H | 3hrs | 0 |
 |  User schema / seed | H | 1hr | 0|
 | Deploy backend | H | 2hrs | o |
