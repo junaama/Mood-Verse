@@ -62,7 +62,7 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 | Verse based on mood | H | 5hrs | 0 |
 | Render saved verses to Saved page | L | 4hrs | 0 |
 | Setup voice recording | H | 4hrs | 0 |
-| Total                        |          |     0hrs     |               |   
+| Total                        |          |     66hrs     |               |   
 ## MVP
 
 ## Post-MVP
