@@ -47,7 +47,21 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 | Component                    | Priority | Estimated Time | Time Invested |
 | --------------------------   | :----:   |  :-----------: | :-----------: |
 | Backend Setup(Routes, Controllers, Schema, Seed)          |    H     |      4hrs      |   |
+| User routes/controllers | H | 3hrs | 0 |
+|  User schema / seed | H | 1hr | 0|
+| Deploy backend | H | 2hrs | o |
+| Backend research/ API research | H | 8hrs | 0 |
+| Deepaffects setup | M | 4hrs | 0 |
 | RESTful Api Calls            | H | 3hrs | 0 |
+| Frontend research | H | 3hrs | 0 |
+| User login/auth | M | 4hrs | 0 |
+| Styling/Responsive Design | M | 12hrs | 0 |
+| Settings page | L | 4hrs | 0 |
+| NavBar /Routes | H | 2hrs | 0 |
+| Verse of the day | M | 3hrs | 0 |
+| Verse based on mood | H | 5hrs | 0 |
+| Render saved verses to Saved page | L | 4hrs | 0 |
+| Setup voice recording | H | 4hrs | 0 |
 | Total                        |          |     0hrs     |               |   
 ## MVP
 
