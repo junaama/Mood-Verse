@@ -82,9 +82,12 @@ function App() {
     console.log('This function does not return an object, but is called at a time interval of 10ms');
   }
 
+  const [savedFile, setSavedFile]= useState("")
   function onStop(recordedBlob) {
     console.log('recordedBlob is: ', recordedBlob);
     setBlobUrl(recordedBlob.blobURL)
+    // const objectURL = srcObject(recordedBlob.blobURL)
+    // console.log(objectURL)
   }
   const [record, setRecord]=useState(false)
 
