@@ -1,47 +1,61 @@
-import React, {useState, useEffect} from 'react';
-import './App.css';
-import axios from 'axios';
-import {ReactMic} from 'react-mic'
-// import deep-affects from 'deep-affects'
-const goodthings = require('./goodthings.mp3')
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import axios from "axios";
+import { ReactMic } from "react-mic";
+const goodthings = require("./goodthings.mp3");
 
 function App() {
-
-  const [blobURL, setBlobUrl]=useState("")
- 
+  const [record, setRecord] = useState(false);
+  const [blobURL, setBlobUrl] = useState("");
+  const reader = new FileReader()
   function onData() {
-    console.log('This function does not return an object, but is called at a time interval of 10ms');
+    console.log(
+      "This function does not return an object, but is called at a time interval of 10ms"
+    );
   }
-
-  const [savedFile, setSavedFile]= useState("")
+ 
   function onStop(recordedBlob) {
-    console.log('recordedBlob is: ', recordedBlob);
-    setBlobUrl(recordedBlob.blobURL)
-    // const objectURL = srcObject(recordedBlob.blobURL)
-    // console.log(objectURL)
+    console.log("recordedBlob is: ", recordedBlob);
+    setBlobUrl(recordedBlob.blobURL);
+    sendAudioFile(recordedBlob)
   }
-  const [record, setRecord]=useState(false)
 
-  function startRecording()  {
-    setRecord(true)
+  function startRecording() {
+    setRecord(true);
   }
-  function stopRecording()  {
-    setRecord(false)
+  function stopRecording() {
+    setRecord(false);
   }
+
+  async function sendAudioFile(file) {
+    const formData = new FormData();
+    formData.append('audio-file', file);
+    // const response = await fetch('http://localhost:3000/', {
+    //   method: 'POST',
+    //   data: formData
+    // })
+    console.log(file)
+  }
+
   return (
     <div className="App">
-     hi
+      hi
       <ReactMic
-          record={record}
-          className="sound-wave"
-          onStop={onStop}
-          onData={onData}
-          strokeColor="#000000"
-          mimeType="audio/mp3"
-          backgroundColor="gray" />
-        <button onClick={startRecording} type="button">Start</button>
-        <button onClick={stopRecording} type="button">Stop</button>
-        <audio src={blobURL} controls="controls"/>
+        record={record}
+        className="sound-wave"
+        onStop={onStop}
+        onData={onData}
+        strokeColor="#000000"
+        mimeType="audio/mp3"
+        backgroundColor="gray"
+      />
+      <button onClick={startRecording} type="button">
+        Start
+      </button>
+      <button onClick={stopRecording} type="button">
+        Stop
+      </button>
+      <audio src={blobURL} controls="controls" />
     </div>
   );
 }
