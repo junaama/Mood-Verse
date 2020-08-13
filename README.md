@@ -62,7 +62,8 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 | Verse based on mood | H | 5hrs | 4hrs |
 | Render saved verses to Saved page | L | 4hrs | 0 |
 | Setup voice recording | H | 4hrs | 8hrs |
-| Total                        |          |     66hrs     |               |   
+| Research/Setup React Native | M | 8hrs | 0 |
+| Total                        |          |     74hrs     |               |   
 ## MVP
 * Verse given based on mood of user
 * Saved page with saved verses of user
