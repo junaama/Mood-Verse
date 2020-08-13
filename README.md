@@ -100,3 +100,4 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 - Webhooks [https://simonfredsted.com/1583]
 * Webhooks allow for API's to send if data has been updated
     * In programming, the word “hook” comes from the phrase “hooking into” something, so a Webhook is hooking into an event, or making the application call it whenever the event happens. The application has a list of hooks that must be notified whenever a given action occurs, but since Webhooks are usually asynchronous, the application doesn’t wait for a response. In your example, let’s say there’s an app that has created a Webhook for when you’re picking up your keys from the table (before going outside) — the event. When called, it can then check the weather and send you an alert on your phone saying that it’s raining. - Simon Fredsted
+- Speech Recognition API
