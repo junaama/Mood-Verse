@@ -1,4 +1,6 @@
 import React, {  useEffect } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -107,4 +109,15 @@ const Home = (props) => {
     </>
   );
 };
-export default Home;
+Home.propTypes = {
+  
+  auth: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+export default connect(
+  mapStateToProps,
+  
+)(Home);
+// export default Home;
