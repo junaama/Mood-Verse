@@ -3,7 +3,8 @@ import {Link, withRouter} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {registerUser} from '../../actions/authActions'
-import classnames from 'classnames'
+import classnames from 'classnames';
+
 
 const Register = (props) => {
     const [input, setInput]= useState({
@@ -17,13 +18,15 @@ const Register = (props) => {
     const handleSubmit = (e)=> {
         e.preventDefault()
         props.registerUser(input, props.history)
-    }
-    useEffect(()=> {
-        if(props.errors){
+     if(props.errors){
             setErrors(props.errors)
         }
-    })
-    
+    }
+
+ 
+
+
+        
     return (
         <div>
             <form noValidate onSubmit={handleSubmit}>

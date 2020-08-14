@@ -12,7 +12,7 @@ import {
   //register user
 export const registerUser = (userData, history)=> dispatch =>{
     axios
-        .post(`${apiUrl}/api/user/register`, userData)
+        .post(`${apiUrl}/api/users/register`, userData)
         .then(res=> history.push("/login"))
         .catch(err=>
             dispatch({
@@ -25,7 +25,7 @@ export const registerUser = (userData, history)=> dispatch =>{
   //login
 export const loginUser = userData => dispatch => {
     axios
-        .post(`${apiUrl}/api/user/login`, userData)
+        .post(`${apiUrl}/api/users/login`, userData)
         .then(res => {
             //set token to localstorage
             const { token } = res.data
