@@ -1,11 +1,14 @@
-import React, {  useEffect } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React, { useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+import UserContext from "../../context/context";
+import Header from '../Layout/Header'
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
+
 const Home = (props) => {
+  const { user } = useContext(UserContext);
   const history = useHistory();
   const voiceCommands = () => {
     recognition.onstart = () => {
@@ -92,8 +95,11 @@ const Home = (props) => {
   });
 
   return (
-    <>
-      Mood options are
+    <div>
+      {user.user ? (
+        <>
+        <Header/>
+        <p>Mood options are</p>
       <ul>
         Happy Angry Sad Frustrated Empathy Politeness Worried Vengeful Thankful
         Excited Peaceful Jealous Heartbroken Apathetic Joyful Annoyed Confused
@@ -106,18 +112,15 @@ const Home = (props) => {
       >
         Record
       </button>
-    </>
+      </>
+      ) : (
+      <>
+        <h2>You are not logged in</h2>
+        <Link to="/login">Log in</Link>
+      </>
+      )}
+    </div>
   );
 };
-Home.propTypes = {
-  
-  auth: PropTypes.object.isRequired
-};
-const mapStateToProps = state => ({
-  auth: state.auth
-});
-export default connect(
-  mapStateToProps,
-  
-)(Home);
-// export default Home;
+
+export default Home;

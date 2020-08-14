@@ -4,6 +4,7 @@ import axios from 'axios'
 import Errors from '../errors/errors'
 import UserContext from '../../context/context'
 import apiUrl from '../../apiConfig.js'
+import './login.css'
 const Login = () => {
   const [input, setInput] = useState({
     email: "",
@@ -42,11 +43,12 @@ const Login = () => {
 
 
   return (
-    <div>
+    <div className="login-ctn">
+       <p id="login-head">Log in to Mood Verse</p>
        {errors && (
         <Errors message={errors} clearError={() => setErrors(undefined)} />
       )}
-      <form  onSubmit={handleSubmit}>
+      <form  onSubmit={handleSubmit} className="logform-ctn">
         <label htmlFor="email">Email</label>
         <input
         
@@ -66,8 +68,12 @@ const Login = () => {
           id="password"
           
         />
-        <button type="submit">Login</button>
+        <br/>
+        <button type="submit" id="log-btn">Login</button>
       </form>
+      <p id="log-reg">
+        Want to join in on the fun? <a href="/register">Sign up</a>
+      </p>
     </div>
   );
 };

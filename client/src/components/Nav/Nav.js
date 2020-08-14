@@ -9,7 +9,7 @@ const Nav = () => {
     return (
         <>
     <nav>
-        <Link to='/' ><img src={house} alt="home link"></img></Link>
+        <Link to='/home' ><img src={house} alt="home link"></img></Link>
         <Link to='/verse'>Verse</Link>
         <Link to='/saved'><img src={star} alt="saved link"></img></Link>
         <Link to="/settings"><img src={settings} alt="settings link"></img></Link>

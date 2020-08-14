@@ -1,0 +1,36 @@
+body {
+    font-family: 'Hind', sans-serif;
+    font-family: 'Imprima', sans-serif;
+}
+.login-ctn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 35px;
+}
+.logform-ctn {
+    display: flex;
+    flex-direction: column;
+}
+.logform-ctn input {
+    padding: 8px;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid #a0a0a0;
+}
+#login-head {
+    font-size: 25px;
+    font-weight: 700;
+}
+#log-reg, #log-btn {
+    font-family: "Imprima";
+  text-align: center;
+}
+#log-reg {
+
+}
+#log-btn {
+    font-size: 25px;
+    border: none;
+    text-align: center;
+}

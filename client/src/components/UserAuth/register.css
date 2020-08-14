@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Imprima&display=swap");
+
+body {
+  background-color: #bac9c3;
+  font-family: "Hind", "sans-serif";
+  font-size: 18px;
+  margin: 0 auto;
+}
+
+.register-ctn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 35px;
+}
+
+.form-ctn {
+  display: flex;
+  flex-direction: column;
+}
+.form-ctn input {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid #a0a0a0;
+}
+#register-head {
+  font-size: 25px;
+  font-weight: 700;
+}
+#reg-btn,
+#reg-log {
+  font-family: "Imprima";
+  text-align: center;
+}
+#reg-btn {
+  font-size: 25px;
+  border: none;
+  text-align: center;
+}
+a {
+  color: #989dff;
+}
