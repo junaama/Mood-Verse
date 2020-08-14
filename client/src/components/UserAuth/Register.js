@@ -1,70 +1,66 @@
-import React, {useState, useEffect} from 'react'
-import {Link, withRouter} from 'react-router-dom'
-import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
-import {registerUser} from '../../actions/authActions'
-import classnames from 'classnames';
-
-
+import React, {useState, useContext} from 'react'
+import { useHistory} from 'react-router-dom'
+import UserContext from '../../context/context'
+import axios from 'axios'
+import Errors from '../errors/errors'
+import apiUrl from '../../apiConfig'
 const Register = (props) => {
     const [input, setInput]= useState({
         username: "", email: "", password: "", password2: ""
     })
-    const [errors, setErrors]= useState({})
-    
+    const [errors, setErrors]= useState()
+    const history = useHistory()
+    const {setUser}=useContext(UserContext)
     const handleChange = (e)=> {
         setInput({...input, [e.target.name]: e.target.value})
     }
-    const handleSubmit = (e)=> {
+    const handleSubmit = async (e)=> {
         e.preventDefault()
-        props.registerUser(input, props.history)
-     if(props.errors){
-            setErrors(props.errors)
+        
+        try{
+            const email = input.email
+            const password = input.password
+            await axios.post(`${apiUrl}/api/users/register`, input)
+            const loginRes = await axios.post(`${apiUrl}/api/users/login`, {
+                email,
+                password,
+            })
+            setUser({
+                token: loginRes.data.token,
+                user: loginRes.data.user
+            })
+            localStorage.setItem("auth-token", loginRes.data.token)
+            history.push('/')
+        }catch(err){
+            err.response.data.msg && setErrors(err.response.data.msg)
         }
     }
 
- 
 
 
         
     return (
         <div>
-            <form noValidate onSubmit={handleSubmit}>
+             {errors && (
+        <Errors message={errors} clearError={() => setErrors(undefined)} />
+      )}
+            <form onSubmit={handleSubmit}>
 
             <label>Username</label>
-            <input errors={errors.username} onChange={handleChange} type='text' name="username" id="username" className={classnames("", {
-                    invalid: errors.username
-                  })}/>
+            <input  onChange={handleChange} type='text' name="username" id="username" />
 
             <label>Email</label>
-            <input errors={errors.email} onChange={handleChange} type='text' name="email" id="email" className={classnames("", {
-                    invalid: errors.email
-                  })}/>
+            <input  onChange={handleChange} type='text' name="email" id="email" />
 
             <label>Password</label>
-            <input errors={errors.password} onChange={handleChange}  type='text' name="password" id="password" className={classnames("", {
-                    invalid: errors.password
-                  })}/>
+            <input  onChange={handleChange}  type='text' name="password" id="password" />
 
             <label>Confirm Password</label>
-            <input errors={errors.password2} onChange={handleChange}  type='text' name="password2" id="password2" className={classnames("", {
-                    invalid: errors.password2
-                  })}/>
+            <input  onChange={handleChange}  type='text' name="password2" id="password2" />
 
             <button type="submit">Sign Up</button>
             </form>
         </div>
     )
 }
-Register.propTypes = {
-    registerUser: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired,
-    errors: PropTypes.object.isRequired
-  };
-const mapStateToProps = state => ({
-    auth: state.auth, 
-    errors: state.errors
-})
-export default connect(
-    mapStateToProps, {registerUser}
-)(withRouter(Register))
+export default Register

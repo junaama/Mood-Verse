@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import apiUrl from '../../apiConfig'
 const Verse = (props) => {
   const [verse, setVerse] = useState([]);
   let randomNum = Math.floor(Math.random() * 6);
   useEffect(() => {
     const makeApiCall = async () => {
       try {
-        const res = await axios("http://localhost:3000/verses");
+        const res = await axios(`${apiUrl}/verses`);
         setVerse(res.data.verses);
       } catch (err) {
         console.error(err);
