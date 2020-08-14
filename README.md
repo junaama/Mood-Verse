@@ -46,15 +46,15 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 ## Time Priority Matrix
 | Component                    | Priority | Estimated Time | Time Invested |
 | --------------------------   | :----:   |  :-----------: | :-----------: |
-| Backend Setup(Routes, Controllers, Schema, Seed)          |    H     |      4hrs      |  12hrs |
-| User/verses routes/controllers | H | 3hrs | 4hrs |
+| Backend Setup(Routes, Controllers, Schema, Seed)          |    H     |      4hrs      |  17hrs |
+| User/verses routes/controllers | H | 3hrs | 8hrs |
 |  User/verse schema / seed | H | 1hr | 1hr|
 | Deploy backend | H | 2hrs | 1hr |
-| Backend research/ API research | H | 8hrs | 16hrs |
+| Backend research/ API research | H | 8hrs | 21hrs |
 | Deepaffects setup | M | 4hrs | 5 |
 | RESTful Api Calls            | H | 3hrs | 3hrs |
-| Frontend research | H | 3hrs | 5hr |
-| User login/auth | M | 4hrs | 7hr |
+| Frontend research | H | 3hrs | 7hr |
+| User login/auth | M | 4hrs | 12hr |
 | Styling/Responsive Design | M | 12hrs | 1hr |
 | Settings page | L | 4hrs | 0 |
 | NavBar /Routes | H | 2hrs | 1hr |
