@@ -55,7 +55,7 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 | RESTful Api Calls            | H | 3hrs | 3hrs |
 | Frontend research | H | 3hrs | 7hr |
 | User login/auth | M | 4hrs | 12hr |
-| Styling/Responsive Design | M | 12hrs | 1hr |
+| Styling/Responsive Design | M | 12hrs | 3hr |
 | Settings page | L | 4hrs | 0 |
 | NavBar /Routes | H | 2hrs | 1hr |
 | Verse of the day | M | 3hrs | 0 |
