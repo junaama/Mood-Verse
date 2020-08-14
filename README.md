@@ -46,15 +46,15 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 ## Time Priority Matrix
 | Component                    | Priority | Estimated Time | Time Invested |
 | --------------------------   | :----:   |  :-----------: | :-----------: |
-| Backend Setup(Routes, Controllers, Schema, Seed)          |    H     |      4hrs      |  9hrs |
-| User/verses routes/controllers | H | 3hrs | 2hrs |
+| Backend Setup(Routes, Controllers, Schema, Seed)          |    H     |      4hrs      |  12hrs |
+| User/verses routes/controllers | H | 3hrs | 4hrs |
 |  User/verse schema / seed | H | 1hr | 1hr|
 | Deploy backend | H | 2hrs | 1hr |
-| Backend research/ API research | H | 8hrs | 10hrs |
+| Backend research/ API research | H | 8hrs | 16hrs |
 | Deepaffects setup | M | 4hrs | 5 |
-| RESTful Api Calls            | H | 3hrs | 2hrs |
-| Frontend research | H | 3hrs | 1hr |
-| User login/auth | M | 4hrs | 2hr |
+| RESTful Api Calls            | H | 3hrs | 3hrs |
+| Frontend research | H | 3hrs | 5hr |
+| User login/auth | M | 4hrs | 7hr |
 | Styling/Responsive Design | M | 12hrs | 1hr |
 | Settings page | L | 4hrs | 0 |
 | NavBar /Routes | H | 2hrs | 1hr |
@@ -96,7 +96,8 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 ## Code Snippet
 
 ## Bugs & Fixes
-
+* Accidentally pushed mongodb uri key in my git commit
+    * I had to delete my backend git repo and start over
 #### Things I learned
 - Webhooks [https://simonfredsted.com/1583]
 * Webhooks allow for API's to send if data has been updated
