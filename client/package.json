@@ -41,15 +41,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "git-scripts": "^0.4.3",
-    "redux-devtools-extension": "^2.13.8",
-    "surge": "^0.21.6"
-  },
-  "git": {
-    "scripts": {
-      "pre-push": "npm run build && surge --project ./home/naama/Desktop/seir-526/project4/Mood-Verse/client/ --domain moodverse.surge.sh"
-    }
   }
 }
