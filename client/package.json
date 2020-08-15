@@ -49,7 +49,7 @@
   },
   "git": {
     "scripts": {
-      "pre-push": "npm run build && surge --project ./public --domain moodverse.surge.sh"
+      "pre-push": "npm run build && surge --project ./home/naama/Desktop/seir-526/project4/Mood-Verse/client/ --domain moodverse.surge.sh"
     }
   }
 }
