@@ -58,7 +58,6 @@ function App() {
           render={(props) => <Verse {...props} mood={mood} />}
         />
       </Switch>
-      {/* <Landing/> */}
       <Nav />
     </div>
     </UserContext.Provider>
