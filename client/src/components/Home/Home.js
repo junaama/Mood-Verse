@@ -1,18 +1,23 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import UserContext from "../../context/context";
-import Header from '../Layout/Header'
+import Header from "../Layout/Header";
+import "./home.css";
+import TextLoop from "react-text-loop";
+
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
 
 const Home = (props) => {
   const { user } = useContext(UserContext);
+  const [isRecording, setIsRecording] = useState(false);
   const history = useHistory();
   const voiceCommands = () => {
     recognition.onstart = () => {
       console.log("Voice is actived");
+      setIsRecording(true);
     };
   };
   recognition.onresult = (e) => {
@@ -95,29 +100,54 @@ const Home = (props) => {
   });
 
   return (
-    <div>
+    <div className="home-ctn">
       {user.user ? (
         <>
-        <Header/>
-        <p>Mood options are</p>
-      <ul>
-        Happy Angry Sad Frustrated Empathy Politeness Worried Vengeful Thankful
-        Excited Peaceful Jealous Heartbroken Apathetic Joyful Annoyed Confused
-        Uncomfortable
-      </ul>
-      <button
-        onClick={() => {
-          recognition.start();
-        }}
-      >
-        Record
-      </button>
-      </>
+          <Header />
+          <div className="mood-content-ctn">
+            Feeling{" "}
+            <TextLoop
+              children={[
+                "Happy",
+                "Angry",
+                "Sad",
+                "Frustrated",
+                "Empathy",
+                "Politeness",
+                "Worried",
+                "Vengeful",
+                "Thankful",
+                "Excited",
+                "Peaceful",
+                "Jealous",
+                "Heartbroken",
+                "Apathetic",
+                "Joyful",
+                "Annoyed",
+                "Confused",
+                "Uncomfortable",
+              ]}
+              springConfig={{ stiffness: 180, damping: 8 }}
+              interval={750}
+            />{" "}
+            Today?
+          </div>
+          <div className="btn-ctn-ctn"><div className={isRecording ? "btn-ctn is-recording" : "btn-ctn"}>
+            {" "}
+            <button
+              id="record-btn"
+              onClick={() => {
+                recognition.start();
+              }}
+            >record</button>
+          </div></div>
+          
+        </>
       ) : (
-      <>
-        <h2>You are not logged in</h2>
-        <Link to="/login">Log in</Link>
-      </>
+        <>
+          <h2>You are not logged in</h2>
+          <Link to="/login">Log in</Link>
+        </>
       )}
     </div>
   );

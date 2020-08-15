@@ -8,11 +8,9 @@ header {
     font-size: 25px;
     align-items: center;
 }
-header div {
-    
-}
+
 #mood-title {
-    font-size: 64px;
+    font-size: 48px;
     font-weight: 600;
     text-align: center 
    

@@ -1,0 +1,57 @@
+.home-ctn {
+    padding: 25px;
+    margin: 0 auto;
+    position: relative;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.btn-ctn {
+   
+    width: 50px;
+    height: 50px;
+    background-color: #ff989b;
+    border-radius: 50%;
+    border: 2px solid white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#record-btn {
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    align-items: center;
+    font-size: 0;
+    outline: none;
+    justify-content: center;
+}
+.btn-ctn-ctn {
+display: flex;
+justify-content: center;
+padding: 1rem;
+}
+.is-recording {
+    animation-name: pulse;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.mood-content-ctn {
+    font-size: 45px;
+    text-align: center;
+    /* padding: 25px; */
+    padding: 50% 60px 50px 60px;
+}
+@keyframes pulse{
+    0%{
+        box-shadow: 0px 0px 5px 0px rgba(202, 169, 163, 0.3);
+    }
+    65%{
+		box-shadow: 0px 0px 5px 13px rgba(207, 141, 131, 0.3);
+	}
+	90%{
+		box-shadow: 0px 0px 5px 13px rgba(201, 188, 186,0);
+	}
+}

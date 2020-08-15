@@ -53,9 +53,9 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 | Backend research/ API research | H | 8hrs | 21hrs |
 | Deepaffects setup | M | 4hrs | 5 |
 | RESTful Api Calls            | H | 3hrs | 3hrs |
-| Frontend research | H | 3hrs | 7hr |
+| Frontend research | H | 3hrs | 8hr |
 | User login/auth | M | 4hrs | 12hr |
-| Styling/Responsive Design | M | 12hrs | 3hr |
+| Styling/Responsive Design | M | 12hrs | 7hr |
 | Settings page | L | 4hrs | 0 |
 | NavBar /Routes | H | 2hrs | 1hr |
 | Verse of the day | M | 3hrs | 0 |
@@ -93,6 +93,9 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
     https://good-vibrations.nl/contact/
     https://developers.vokaturi.com/using/c-sample-batch
     https://developers.deepaffects.com/app/dashboard
+    [React Text Loop](https://github.com/braposo/react-text-loop)
+    Material UI
+    React Swipeable
 ## Code Snippet
 
 ## Bugs & Fixes
