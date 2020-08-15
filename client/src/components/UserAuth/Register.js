@@ -61,7 +61,7 @@ const Register = (props) => {
         <label>Password</label>
         <input
           onChange={handleChange}
-          type="text"
+          type="password"
           name="password"
           id="password"
         />
@@ -69,7 +69,7 @@ const Register = (props) => {
         <label>Confirm Password</label>
         <input
           onChange={handleChange}
-          type="text"
+          type="password"
           name="password2"
           id="password2"
         />

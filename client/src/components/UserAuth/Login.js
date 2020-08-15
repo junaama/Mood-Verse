@@ -34,7 +34,7 @@ const Login = () => {
       localStorage.setItem("auth-token", loginRes.data.token)
       history.push('/')
     }catch(err){
-      err.response.data.msg && setErrors(err.response.data.msp)
+      err.response.data.msg && setErrors(err.response.data.msg)
     }
 
   };
@@ -63,7 +63,7 @@ const Login = () => {
         <input
          
           onChange={handleChange}
-          type="text"
+          type="password"
           name="password"
           id="password"
           
