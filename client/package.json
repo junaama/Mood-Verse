@@ -49,7 +49,7 @@
   },
   "git": {
     "scripts": {
-      "pre-push": "surge --project ./public --domain http://moodverse.surge.sh/"
+      "pre-push": "npm run build && surge --project ./public --domain moodverse.surge.sh"
     }
   }
 }
