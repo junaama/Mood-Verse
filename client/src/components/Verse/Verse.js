@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import apiUrl from "../../apiConfig";
 import PropTypes from "prop-types";
@@ -9,6 +9,10 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import SwipeableViews from 'react-swipeable-views';
+import star from '../Nav/star.png'
+import UserContext from "../../context/context";
+import {Link} from 'react-router-dom'
+import './verse.css'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -43,6 +47,8 @@ function TabPanel(props) {
 }
 
 const Verse = (props) => {
+  const { user } = useContext(UserContext);
+  let randomNum = Math.floor(Math.random() * 6);
   const [verse, setVerse] = useState([]);
   const [activeTab, setActiveTab] = useState("1");
 
@@ -50,7 +56,7 @@ const Verse = (props) => {
     if (activeTab !== tab) setActiveTab(tab);
   };
 
-  let randomNum = Math.floor(Math.random() * 6);
+  
   useEffect(() => {
     const makeApiCall = async () => {
       try {
@@ -71,50 +77,37 @@ const Verse = (props) => {
   const handleChangeIndex = (index) => {
     setValue(index);
   };
+  const handleSaveUpdate = (verse) => {
+    //do something
+    props.setSavedVerses(verse)
+  }
+  
   const output = verse.map((item, ind) => {
+    
+    
     if (props.mood) {
+      let currentVerse = item[props.mood][randomNum]
       return (
+        <>
         <div key={`${ind} div`}>
-          <p key={`${ind} path`}>{item[props.mood][randomNum].versePath}</p>
-          <p key={`${ind} content`}>{item[props.mood][randomNum].content}</p>
+          <p key={`${ind} path`}>{currentVerse.versePath}</p>
+          <p key={`${ind} content`}>{currentVerse.content}</p>
         </div>
+        <div><button onClick={handleSaveUpdate(currentVerse.versePath)}><img src={star}></img></button></div>
+        </>
       );
     }
-    return <p key={`${ind} p`}>No applicable mood.</p>;
+    return <p key={`${ind} p`}>Set your current mood in the home page!</p>;
   });
+  
   return (
-    <>
-      {output}{" "}
-      <div className={classes.root}>
-        <AppBar position="static" color="default">
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            aria-label="simple tabs example"
-            variant="fullWidth"
-          >
-            <Tab label="Plan" {...a11yProps(0)} />
-            <Tab label="Verse" {...a11yProps(1)} />
-            <Tab label="Playlist" {...a11yProps(2)} />
-          </Tabs>
-        </AppBar>
-        <SwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={value}
-        onChangeIndex={handleChangeIndex}
-      >
-        <TabPanel value={value} index={0} dir={theme.direction}>
-          Plan
-        </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
-          Verse
-        </TabPanel>
-        <TabPanel value={value} index={2} dir={theme.direction}>
-          Playlist
-        </TabPanel>
-      </SwipeableViews>
-      </div>
-    </>
+    <div className='verse-dash'>
+      {user.user ? ( <>{output}{" "} </>) : (<> <h2>You are not logged in</h2>
+          <Link to="/login">Log in</Link></>)
+     
+   
+    }
+    </div>
   );
 };
 export default Verse;

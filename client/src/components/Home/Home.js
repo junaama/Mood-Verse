@@ -14,7 +14,9 @@ const Home = (props) => {
   const { user } = useContext(UserContext);
   const [isRecording, setIsRecording] = useState(false);
   const history = useHistory();
+
   const voiceCommands = () => {
+    recognition.start()
     recognition.onstart = () => {
       console.log("Voice is actived");
       setIsRecording(true);
@@ -87,17 +89,18 @@ const Home = (props) => {
     }
     setTimeout(() => {
       recognition.start();
-    }, 1000);
+    }, 50);
     recognition.onspeechend = () => {
       recognition.stop();
+      setIsRecording(false)
       console.log("voice stopped");
       history.push("/verse");
     };
   };
 
-  useEffect(() => {
-    voiceCommands();
-  });
+  // useEffect(() => {
+  //   voiceCommands();
+  // });
 
   return (
     <div className="home-ctn">
@@ -132,16 +135,20 @@ const Home = (props) => {
             />{" "}
             Today?
           </div>
-          <div className="btn-ctn-ctn"><div className={isRecording ? "btn-ctn is-recording" : "btn-ctn"}>
+          <div className="btn-ctn-ctn">
+            <div className={isRecording ? "btn-ctn is-recording is-blinking" : "btn-ctn"}>
             {" "}
             <button
               id="record-btn"
               onClick={() => {
-                recognition.start();
+                // recognition.start();
+                voiceCommands()
               }}
-            >record</button>
-          </div></div>
-          
+            >record
+            </button>
+          </div>
+          </div>
+
         </>
       ) : (
         <>

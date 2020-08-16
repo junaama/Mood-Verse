@@ -7,25 +7,22 @@
 }
 
 .btn-ctn {
-   
-    width: 50px;
-    height: 50px;
-    background-color: #ff989b;
+
     border-radius: 50%;
-    border: 2px solid white;
     text-align: center;
     align-items: center;
     justify-content: center;
 }
 
 #record-btn {
-    border: none;
-    background-color: transparent;
-    text-align: center;
-    align-items: center;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px dotted white;
+    background-color: red;
     font-size: 0;
     outline: none;
-    justify-content: center;
 }
 .btn-ctn-ctn {
 display: flex;
@@ -33,16 +30,39 @@ justify-content: center;
 padding: 1rem;
 }
 .is-recording {
-    animation-name: pulse;
+    /* animation-name: pulse;
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation-timing-function: linear; */
+    /* animation: dotted in; */
+    animation: spin 10s linear infinite;
+}
+.is-blinking {
+     /* animation-name: dotted;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; */
+    animation: spin 10s linear infinite;
 }
 .mood-content-ctn {
     font-size: 45px;
     text-align: center;
-    /* padding: 25px; */
     padding: 50% 60px 50px 60px;
+}
+
+@keyframes dotted{
+    0%{
+        border: 1px solid white;
+        box-shadow: 0px 0px 5px 0px rgba(202, 169, 163, 0.3);
+    }
+    65%{
+        border: 1px dotted white;
+        box-shadow: 0px 0px 5px 13px rgba(207, 141, 131, 0.3);
+    }
+    90%{
+        border: 1px solid white;
+        box-shadow: 0px 0px 5px 13px rgba(201, 188, 186,0);
+    }
 }
 @keyframes pulse{
     0%{
@@ -55,3 +75,8 @@ padding: 1rem;
 		box-shadow: 0px 0px 5px 13px rgba(201, 188, 186,0);
 	}
 }
+@keyframes spin { 
+    100% { 
+      transform: rotateZ(360deg);
+    }
+  }

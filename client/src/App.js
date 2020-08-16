@@ -10,13 +10,15 @@ import Login from "./components/UserAuth/Login";
 import "./App.css";
 import apiUrl from './apiConfig.js'
 import axios from 'axios'
-
+import Saved from './components/Saved/Saved'
+import VerseOTD from './components/VOTD/VerseOTD'
 function App() {
   const [mood, setMood] = useState("");
   const [user, setUser] = useState({
     token: undefined,
     user: undefined
   })
+  const [savedVerses, setSavedVerses] = useState()
   useEffect(()=> {
     const checkLoggedIn = async () => {
       let token = localStorage.getItem("auth-token")
@@ -55,8 +57,9 @@ function App() {
         />
         <Route
           exact path="/verse"
-          render={(props) => <Verse {...props} mood={mood} />}
+          render={(props) => <Verse {...props} mood={mood} setSavedVerses={setSavedVerses}/>}
         />
+        <Route exact path='/saved' render={(props)=> <Saved {...props} savedVerses={savedVerses}/>}/>
       </Switch>
       <Nav />
     </div>
