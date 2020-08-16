@@ -46,23 +46,24 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 ## Time Priority Matrix
 | Component                    | Priority | Estimated Time | Time Invested |
 | --------------------------   | :----:   |  :-----------: | :-----------: |
-| Backend Setup(Routes, Controllers, Schema, Seed)          |    H     |      4hrs      |  17hrs |
-| User/verses routes/controllers | H | 3hrs | 8hrs |
-|  User/verse schema / seed | H | 1hr | 1hr|
+| Backend Setup(Routes, Controllers, Schema, Seed)          |    H     |      4hrs      |  20hrs |
+| User/verses/books routes/controllers | H | 3hrs | 10hrs |
+|  User/verse/books schema / seed | H | 1hr | 3hr|
 | Deploy backend | H | 2hrs | 1hr |
-| Backend research/ API research | H | 8hrs | 21hrs |
+| Backend research/ API research | H | 8hrs | 25hrs |
 | Deepaffects setup | M | 4hrs | 5 |
-| RESTful Api Calls            | H | 3hrs | 3hrs |
-| Frontend research | H | 3hrs | 8hr |
+| RESTful Api Calls            | H | 3hrs | 5hrs |
+| Frontend research | H | 3hrs | 9hr |
 | User login/auth | M | 4hrs | 12hr |
-| Styling/Responsive Design | M | 12hrs | 7hr |
+| Styling/Responsive Design | M | 12hrs | 9hr |
 | Settings page | L | 4hrs | 0 |
 | NavBar /Routes | H | 2hrs | 1hr |
 | Verse of the day | M | 3hrs | 0 |
 | Verse based on mood | H | 5hrs | 4hrs |
-| Render saved verses to Saved page | L | 4hrs | 0 |
+| Render saved verses to Saved page | L | 4hrs | 1 |
 | Setup voice recording | H | 4hrs | 8hrs |
 | Research/Setup React Native | M | 8hrs | 0 |
+| Setup reading plans | M | 4hrs | 2hrs |
 | Total                        |          |     74hrs     |               |   
 ## MVP
 * Verse given based on mood of user
