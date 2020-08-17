@@ -11,7 +11,7 @@ import "./App.css";
 import apiUrl from './apiConfig.js'
 import axios from 'axios'
 import Saved from './components/Saved/Saved'
-import VerseOTD from './components/VOTD/VerseOTD'
+// import VerseOTD from './components/VOTD/VerseOTD'
 function App() {
   const [mood, setMood] = useState("");
   const [user, setUser] = useState({

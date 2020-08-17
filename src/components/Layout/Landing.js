@@ -1,11 +1,11 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext} from 'react'
 import {useHistory} from 'react-router-dom'
 import UserContext from '../../context/context'
-import axios from 'axios'
-import apiUrl from '../../apiConfig'
-const apiKey = process.env.apiKey
+// import axios from 'axios'
+// import apiUrl from '../../apiConfig'
+// const apiKey = process.env.apiKey
 const Landing = () => {
-    const [plan, setPlan] = useState([])
+    // const [plan, setPlan] = useState([])
     const {user, setUser} = useContext(UserContext)
     const history = useHistory()
     const register = () => history.push('/register')
