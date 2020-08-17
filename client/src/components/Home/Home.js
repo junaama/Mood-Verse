@@ -18,7 +18,7 @@ const Home = (props) => {
   const voiceCommands = () => {
     recognition.start()
     recognition.onstart = () => {
-      console.log("Voice is actived");
+      console.log("Voice is active");
       setIsRecording(true);
     };
   };
@@ -89,7 +89,7 @@ const Home = (props) => {
     }
     setTimeout(() => {
       recognition.start();
-    }, 50);
+    }, 500);
     recognition.onspeechend = () => {
       recognition.stop();
       setIsRecording(false)
@@ -131,7 +131,7 @@ const Home = (props) => {
                 "Uncomfortable",
               ]}
               springConfig={{ stiffness: 180, damping: 8 }}
-              interval={750}
+              interval={1500}
             />{" "}
             Today?
           </div>

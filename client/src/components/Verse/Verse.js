@@ -81,7 +81,7 @@ const Verse = (props) => {
     //do something
     props.setSavedVerses(verse)
   }
-  
+  console.log("props mood", props.mood)
   const output = verse.map((item, ind) => {
     
     
