@@ -30,15 +30,15 @@ const Login = (props) => {
       setUser({
         token: loginRes.data.token,
         user: loginRes.data.user,
-        // id: 
       })
-      setUserId(loginRes.data.user.id)
+      // setUserId(loginRes.data.user.id)
       document.cookie = "userId=" + loginRes.data.user.id
       // document.cookie = loginRes.data.user.id
       localStorage.setItem("auth-token", loginRes.data.token)
       history.push('/')
     }catch(err){
-      err.response.data.msg && setErrors(err.response.data.msg)
+      // err.response.data.msg && setErrors(err.response.data.msg)
+      err && setErrors(err)
     }
 
   };

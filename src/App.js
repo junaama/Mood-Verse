@@ -12,6 +12,7 @@ import apiUrl from './apiConfig.js'
 import axios from 'axios'
 import Saved from './components/Saved/Saved'
 import UpdateSave from './components/Saved/UpdateSave'
+import Settings from './components/Settings/Settings'
 // import VerseOTD from './components/VOTD/VerseOTD'
 function App() {
 
@@ -67,6 +68,7 @@ function App() {
           render={(props) => <Verse {...props} mood={mood} setSavedVerses={setSavedVerses}/>}
         />
         <Route exact path='/saved' render={(props)=> <Saved {...props} savedVerses={savedVerses}/>}/>
+        <Route exact path='/settings' component={Settings}/>
       </Switch>
       <Nav />
     </div>
