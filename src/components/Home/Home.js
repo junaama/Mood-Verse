@@ -46,9 +46,6 @@ const Home = (props) => {
       if (transcript === "empathy" || transcript === " empathy") {
         props.setMood("empathy");
       }
-      if (transcript === "politeness" || transcript === " politeness") {
-        props.setMood("politeness");
-      }
       if (transcript === "vengeful" || transcript === " vengeful") {
         props.setMood("vengeful");
       }
@@ -116,7 +113,6 @@ const Home = (props) => {
                 "Sad",
                 "Frustrated",
                 "Empathy",
-                "Politeness",
                 "Worried",
                 "Vengeful",
                 "Thankful",

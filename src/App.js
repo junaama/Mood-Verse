@@ -13,7 +13,8 @@ import axios from 'axios'
 import Saved from './components/Saved/Saved'
 import UpdateSave from './components/Saved/UpdateSave'
 import Settings from './components/Settings/Settings'
-// import VerseOTD from './components/VOTD/VerseOTD'
+import Terms from './components/Settings/Terms'
+import Privacy from './components/Settings/Privacy'
 function App() {
 
   const [mood, setMood] = useState("");
@@ -69,6 +70,8 @@ function App() {
         />
         <Route exact path='/saved' render={(props)=> <Saved {...props} savedVerses={savedVerses}/>}/>
         <Route exact path='/settings' component={Settings}/>
+        <Route exact path="/tc" component={Terms}/>
+        <Route exact path="/pp" component={Privacy}/>
       </Switch>
       <Nav />
     </div>
