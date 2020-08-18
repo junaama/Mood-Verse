@@ -11,14 +11,17 @@ import "./App.css";
 import apiUrl from './apiConfig.js'
 import axios from 'axios'
 import Saved from './components/Saved/Saved'
+import UpdateSave from './components/Saved/UpdateSave'
 // import VerseOTD from './components/VOTD/VerseOTD'
 function App() {
+
   const [mood, setMood] = useState("");
   const [user, setUser] = useState({
     token: undefined,
-    user: undefined
+    user: undefined,
+
   })
-  const [savedVerses, setSavedVerses] = useState()
+  const [savedVerses, setSavedVerses] = useState({})
   useEffect(()=> {
     const checkLoggedIn = async () => {
       let token = localStorage.getItem("auth-token")
@@ -35,28 +38,32 @@ function App() {
         const userRes = await axios.get(`${apiUrl}/api/users`, {
           headers: {"x-auth-token": token}
         })
+       
         setUser({
           token,
-          user: userRes.data
+          user: userRes.data,
+         
         })
       }
     }
     checkLoggedIn()
   },[])
+
   return (
     <UserContext.Provider value={{user, setUser}}>
     <div className="App">
       <Switch>
         <Route exact path="/" component={Landing}/>
         <Route exact path="/register" component={Register}/>
-        <Route exact path="/login" component={Login}/>
+  <Route exact path="/login" component={Login}/>
         <Route
           exact
           path="/home"
           render={(props) => <Home {...props} setMood={setMood} />}
         />
+        <Route path=":id/addVerse/:id" component={UpdateSave}/>
         <Route
-          exact path="/verse"
+          exact path="/verse/"
           render={(props) => <Verse {...props} mood={mood} setSavedVerses={setSavedVerses}/>}
         />
         <Route exact path='/saved' render={(props)=> <Saved {...props} savedVerses={savedVerses}/>}/>
