@@ -15,6 +15,7 @@ import UpdateSave from './components/Saved/UpdateSave'
 import Settings from './components/Settings/Settings'
 import Terms from './components/Settings/Terms'
 import Privacy from './components/Settings/Privacy'
+import Feedback from './components/Settings/Feedback'
 function App() {
 
   const [mood, setMood] = useState("");
@@ -72,6 +73,7 @@ function App() {
         <Route exact path='/settings' component={Settings}/>
         <Route exact path="/tc" component={Terms}/>
         <Route exact path="/pp" component={Privacy}/>
+        <Route exact path="/feedback" component={Feedback}/>
       </Switch>
       <Nav />
     </div>

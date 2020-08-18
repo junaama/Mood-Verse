@@ -20,7 +20,7 @@ const Settings = () => {
        <div className="settings-ctn">
            <div><p>Terms {'&'} Conditions</p><a href="/tc">-{'>'}</a></div>
            <div><p>Privacy Policy</p><a href="/pp">-{'>'}</a></div>
-           <div><p>Feedback</p><a href="#">-{'>'}</a></div>
+           <div><p>Feedback</p><a href="/feedback">-{'>'}</a></div>
            <div><p>About</p><a href="#">-{'>'}</a></div>
            <div><p>Logout</p><button onClick={logout}>{'>'}</button></div>
        </div>
