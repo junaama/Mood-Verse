@@ -31,7 +31,7 @@ const Saved = (props) => {
             }
         }
         makeApiCall()
-    },[])
+    },[userId])
 
     const result = savedVerses.map((item)=> {
         console.log(item)
