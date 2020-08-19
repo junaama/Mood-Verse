@@ -1,7 +1,7 @@
 let apiUrl;
 
 const apiUrls = {
-    production: "https://mood-verse-app.herokuapp.com",
+    production: "https://mood-verse-api.herokuapp.com",
     development: "http://localhost:3000"
 }
 
