@@ -17,8 +17,9 @@ const Home = (props) => {
 
   const voiceCommands = () => {
     recognition.start()
+    console.log("voice start")
     recognition.onstart = () => {
-      console.log("Voice is active");
+      console.log("voice onstart")
       setIsRecording(true);
     };
   };
@@ -85,6 +86,7 @@ const Home = (props) => {
       props.setMood(transcript);
     }
     setTimeout(() => {
+      console.log('time')
       recognition.start();
     }, 500);
     recognition.onspeechend = () => {
@@ -95,9 +97,6 @@ const Home = (props) => {
     };
   };
 
-  // useEffect(() => {
-  //   voiceCommands();
-  // });
 
   return (
     <div className="home-ctn">

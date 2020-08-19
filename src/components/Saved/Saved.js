@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react'
 import UserContext from "../../context/context";
-import {Link, useHistory, Redirect} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import './saved.css'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
