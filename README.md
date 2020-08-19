@@ -71,9 +71,9 @@ Mood verse will generate a verse from the bible based on your mood! You can stat
 ## Additional Libraries
 - [Open Bible](https://www.openbible.info/topics/)
 - [React Text Loop](https://github.com/braposo/react-text-loop)
-  -  Material UI
-   - Speech Recognition Webkit API
-    - Reactstrap
+-  Material UI
+- Speech Recognition Webkit API
+- Reactstrap
 ## Code Snippet
 * It was really fun learning user authentication and I liked figuring out how it works in the backend
 ```
