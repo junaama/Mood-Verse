@@ -1,6 +1,19 @@
 .saved-dash-ctn {
     padding: 25px;
 }
+.saved-dash-ctn header {
+    /* padding: 10px; */
+    text-align: left;
+    border-bottom: 1px solid black;
+}
 .saved-mood-header {
- background-color: #fff;   
+ background-color: #D5E2DE;   
+font-size: 20px;
+padding: 5px;
+
+}
+#verse-path {
+    font-size: 20px;
+    font-weight: 700;
+
 }

@@ -5,7 +5,7 @@ import star from "../Nav/star.png";
 import UserContext from "../../context/context";
 import { Link } from "react-router-dom";
 import "./verse.css";
-
+import jesu from "./jesu-svg.png";
 const Verse = (props) => {
   const { user } = useContext(UserContext);
   const [verse, setVerse] = useState([]);
@@ -14,8 +14,12 @@ const Verse = (props) => {
     const makeApiCall = async () => {
       try {
         const res = await axios(`${apiUrl}/api/verses`);
-  
-        setVerse(res.data.verses.filter((i)=>{return i.mood === props.mood}))
+
+        setVerse(
+          res.data.verses.filter((i) => {
+            return i.mood === props.mood;
+          })
+        );
       } catch (err) {
         console.error(err);
       }
@@ -30,42 +34,47 @@ const Verse = (props) => {
       await axios({
         method: "PUT",
         url: `${apiUrl}/api/users/${userId}/addVerse/${verseId}`,
-        data: { "mood": props.mood },
+        data: { mood: props.mood },
       });
     } catch (error) {
       console.error(error);
     }
   };
 
-  
-const result = () => {
-
-  console.log("53", verse)
-  const randomNum = Math.floor(Math.random() * 6);
-  console.log(verse[randomNum])
-  if(props.mood && verse[randomNum]){
-    return (
-      <>
-      <div>
-        <p>{verse[randomNum].versePath}</p>
-    <p>{verse[randomNum].content}</p>
-      </div>
-      <div>
-        <button onClick={()=> handleSaveUpdate(verse[randomNum]._id)}><img src={star} alt="favorite button"/></button>
-      </div>
-      </>
-    )
-  }else {
-    return <p>Set your current mood in the home page!</p>;
-  }
-  
-}
-
+  const result = () => {
+    const randomNum = Math.floor(Math.random() * 6);
+    console.log(verse[randomNum]);
+    if (props.mood && verse[randomNum]) {
+      return (
+        <>
+          <div>
+            <p id="verse-path">{verse[randomNum].versePath}</p>
+            <p>{verse[randomNum].content}</p>
+          </div>
+          <div>
+            <button onClick={() => handleSaveUpdate(verse[randomNum]._id)}>
+              <img src={star} alt="favorite button" />
+            </button>
+          </div>
+        </>
+      );
+    } else {
+      return <p>Set your current mood in the home page!</p>;
+    }
+  };
 
   return (
     <div className="verse-dash">
       {user.user ? (
-        <>{result()} </>
+        <div className="vrs-ctn">
+          <img src={jesu}></img>
+          <div className>
+            <span>.</span>
+            <p>Verse</p>
+            <span>.</span>
+          </div>
+          {result()}{" "}
+        </div>
       ) : (
         <>
           {" "}

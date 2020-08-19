@@ -45,8 +45,8 @@ const Saved = (props) => {
         return (
             <>
             <div className="saved-mood-header"><p>When you were feeling <strong>{item.mood}</strong>, this verse helped you.</p></div>
-    <div><p>{item.versePath}</p></div>
-        <div><p>{item.content}</p></div>
+    <div id="verse-path"><p>{item.versePath}</p></div>
+        <div id="verse-content"><p>{item.content}</p></div>
       
             </>
         )
@@ -54,7 +54,7 @@ const Saved = (props) => {
     })
     return (
         <div className="saved-dash-ctn">
-            {user.user ? (<>
+            {user.user ? (<><header>Saved</header>
             {result}</>) : ( <>
           <h2>You are not logged in</h2>
           <Link to="/login">Log in</Link>

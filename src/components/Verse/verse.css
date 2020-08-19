@@ -1,3 +1,11 @@
 .verse-dash {
-    padding: 25px;
+  padding: 25px;
+}
+.vrs-ctn {
+  display: flex;
+  flex-direction: column;
+}
+.vrs-ctn img {
+  align-self: center;
+  height: 300px;
 }

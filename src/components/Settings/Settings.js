@@ -28,6 +28,7 @@ const Settings = () => {
     }
     return (
        <div className="settings-ctn">
+           <header>Settings</header>
            <div><p>Terms {'&'} Conditions</p><a href="/tc">--{'>'}</a></div>
            <div><p>Privacy Policy</p><a href="/pp">--{'>'}</a></div>
            <div><p>Feedback</p><a href="/feedback">--{'>'}</a></div>
