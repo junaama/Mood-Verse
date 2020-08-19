@@ -1,11 +1,45 @@
 .verse-dash {
-  padding: 25px;
+  /* padding: 25px; */
+  text-align: center;
+  margin: 0 auto;
 }
 .vrs-ctn {
+ 
   display: flex;
   flex-direction: column;
 }
 .vrs-ctn img {
+   padding: 10px;
   align-self: center;
   height: 300px;
+}
+.vrs-divider {
+  display: flex;
+  justify-content: space-around;
+  background-color: #d5e2de;
+  max-height: 80px;
+  align-items: flex-end;
+  border: 1px solid #9ab0a7;
+}
+.vrs-divider div {
+  border: 1px solid #9ab0a7;
+  background-color: #fffd98;
+  width: 200px;
+  height: 100px;
+}
+.vrs-divider p {
+  text-align: center;
+  font-size: 36px;
+}
+#vrs-btn img{
+  height: 50px;
+ 
+}
+#vrs-btn button {
+   outline: none;
+  border: none;
+background: transparent
+}
+.vrs {
+  padding: 10px;
 }

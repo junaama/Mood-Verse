@@ -65,6 +65,7 @@ const Register = (props) => {
           type="password"
           name="password"
           id="password"
+          
         />
 
         <label>Confirm Password</label>

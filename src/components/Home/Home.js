@@ -137,7 +137,6 @@ const Home = (props) => {
             <button
               id="record-btn"
               onClick={() => {
-                // recognition.start();
                 voiceCommands()
               }}
             >record

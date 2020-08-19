@@ -35,8 +35,8 @@ const Login = (props) => {
       localStorage.setItem("auth-token", loginRes.data.token)
       history.push('/')
     }catch(err){
-      // err.response.data.msg && setErrors(err.response.data.msg)
-      err && setErrors(err)
+      err.response.data.msg && setErrors(err.response.data.msg)
+      // err && setErrors(err)
     }
 
   };
@@ -58,7 +58,7 @@ const Login = (props) => {
           type="text"
           name="email"
           id="email"
-          
+          autoComplete="current-email"
         />
 
         <label htmlFor="password">Password</label>
@@ -68,7 +68,7 @@ const Login = (props) => {
           type="password"
           name="password"
           id="password"
-          
+          autoComplete="current-password"
         />
         <br/>
         <button type="submit" id="log-btn">Login</button>

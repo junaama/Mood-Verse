@@ -1,0 +1,26 @@
+.landing-ctn {
+    padding: 25px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+   align-items: center;
+}
+.landing-ctn button {
+    outline: none;
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+     display: block;
+   
+}
+#landing-tagline {
+    background-color: #fffd98;
+    padding: 10px;
+
+}
+.hidden {
+    display: none
+}

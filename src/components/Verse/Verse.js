@@ -2,11 +2,13 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import apiUrl from "../../apiConfig";
 import star from "../Nav/star.png";
+import filledStar from './filled-star.png'
 import UserContext from "../../context/context";
 import { Link } from "react-router-dom";
 import "./verse.css";
 import jesu from "./jesu-svg.png";
 const Verse = (props) => {
+  const [isFave, setIsFave] = useState(false)
   const { user } = useContext(UserContext);
   const [verse, setVerse] = useState([]);
 
@@ -30,6 +32,7 @@ const Verse = (props) => {
   const userId = document.cookie.split("=")[1];
 
   const handleSaveUpdate = async (verseId) => {
+    setIsFave(true)
     try {
       await axios({
         method: "PUT",
@@ -43,17 +46,16 @@ const Verse = (props) => {
 
   const result = () => {
     const randomNum = Math.floor(Math.random() * 6);
-    console.log(verse[randomNum]);
     if (props.mood && verse[randomNum]) {
       return (
         <>
-          <div>
+          <div className="vrs">
             <p id="verse-path">{verse[randomNum].versePath}</p>
             <p>{verse[randomNum].content}</p>
           </div>
-          <div>
+          <div id="vrs-btn">
             <button onClick={() => handleSaveUpdate(verse[randomNum]._id)}>
-              <img src={star} alt="favorite button" />
+              <img src={isFave ? filledStar : star} alt="favorite button" />
             </button>
           </div>
         </>
@@ -67,11 +69,13 @@ const Verse = (props) => {
     <div className="verse-dash">
       {user.user ? (
         <div className="vrs-ctn">
-          <img src={jesu}></img>
-          <div className>
-            <span>.</span>
-            <p>Verse</p>
-            <span>.</span>
+          <img src={jesu} alt="jesus icon"></img>
+          <br/>
+          <br/>
+          <div className="vrs-divider">
+            <span></span>
+            <div><p>Verse</p></div>
+            <span></span>
           </div>
           {result()}{" "}
         </div>
