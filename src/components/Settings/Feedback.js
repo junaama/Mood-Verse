@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios'
+import './set.css'
 const Feedback = () => {
   const [input, setInput] = useState({
     name: "",
@@ -14,7 +15,6 @@ const Feedback = () => {
       })
   }
   const handleChange = (e) => {
-    // console.log(e.target.value);
     setInput({ ...input, [e.target.name]: e.target.value });
   };
   console.log(input)
@@ -31,7 +31,8 @@ const Feedback = () => {
   };
 
   return (
-    <>
+    <div className="feedback-ctn">
+    <div className="feedback-hdr">Contact Us!</div>
       <form id="contact-form" onSubmit={handleSubmit} method="POST">
         <div className="form-group">
           <label htmlFor="name">Name</label>
@@ -47,7 +48,6 @@ const Feedback = () => {
           <input
             type="email"
             className="form-control"
-            aria-describedby="emailHelp"
             onChange={handleChange}
             name="email"
           />
@@ -61,11 +61,12 @@ const Feedback = () => {
             name="message"
           ></textarea>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <br/>
+        <button type="submit" id="feedback-btn">
           Submit
         </button>
       </form>
-    </>
+    </div>
   );
 };
 export default Feedback;

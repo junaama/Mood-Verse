@@ -1,9 +1,9 @@
 import React from 'react'
-
+import './set.css'
 const Privacy = ()=> {
 
     return (
-<div>
+<div className="pp-ctn">
   <style
     dangerouslySetInnerHTML={{
       __html:

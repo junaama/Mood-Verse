@@ -11,7 +11,7 @@ import "./App.css";
 import apiUrl from './apiConfig.js'
 import axios from 'axios'
 import Saved from './components/Saved/Saved'
-
+import About from './components/Settings/About'
 import Settings from './components/Settings/Settings'
 import Terms from './components/Settings/Terms'
 import Privacy from './components/Settings/Privacy'
@@ -74,6 +74,7 @@ function App() {
         <Route exact path="/tc" component={Terms}/>
         <Route exact path="/pp" component={Privacy}/>
         <Route exact path="/feedback" component={Feedback}/>
+        <Route exact path="/about" component={About}/>
       </Switch>
       <Nav />
     </div>

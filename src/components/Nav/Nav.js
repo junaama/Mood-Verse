@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import "./Nav.css"
 import home from './home.png' 
 import star from './star.png'

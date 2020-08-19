@@ -1,0 +1,68 @@
+.tc-ctn,
+.pp-ctn,
+.feedback-ctn,
+.about-ctn {
+  padding: 25px;
+  margin: 0 auto;
+}
+.feedback-ctn {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 25px;
+
+  align-items: center;
+}
+.form-control {
+  width: 250px;
+}
+.form-group {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background-color: #a19ab0;
+  border-top: 2px solid #9ab0a8;
+}
+.feedback-hdr {
+  background-color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+#feedback-btn {
+  outline: none;
+  font-size: 20px;
+  padding: 10px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  min-width: 100px;
+  background-color: white;
+}
+.about-ctn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.mission-ctn,
+.about-me-ctn {
+  background-color: white;
+  border-top: 2px solid #9ab0a8;
+  padding: 25px;
+}
+#msn-stm {
+    background-color: #a19ab0;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+}
