@@ -1,16 +1,17 @@
 nav {
     min-width: 100vw;
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
     bottom: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     border-top: 1px solid #9AB0A8;
+    background-color: #bac9c3;
 }
 nav a {
     padding: 10px;
 }
 nav img {
-    /* width: 40px; */
     height: 35px;
 }

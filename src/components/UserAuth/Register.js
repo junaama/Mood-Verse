@@ -34,6 +34,7 @@ const Register = (props) => {
         user: loginRes.data.user,
       });
       localStorage.setItem("auth-token", loginRes.data.token);
+      document.cookie = "userId=" + loginRes.data.user.id
       history.push("/");
     } catch (err) {
       err.response.data.msg && setErrors(err.response.data.msg);

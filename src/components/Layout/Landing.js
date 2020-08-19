@@ -1,10 +1,11 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import UserContext from '../../context/context'
-// import axios from 'axios'
-// import apiUrl from '../../apiConfig'
-// const apiKey = process.env.apiKey
+
+import { Alert } from '@material-ui/lab';
+
 const Landing = () => {
+
     // const [plan, setPlan] = useState([])
     const {user, setUser} = useContext(UserContext)
     const history = useHistory()
@@ -13,44 +14,21 @@ const Landing = () => {
     const logout = () => {
         setUser({
             token: undefined,
-            user: undefined
+            user: undefined,
+            id: undefined
         })
         localStorage.setItem("auth-token", "")
+        document.cookie = "userId=" + "";
+        console.log("in logout", document.cookie)
     }
-    /*
-    const randomNum = Math.floor(Math.random()* 814)
-    useEffect(()=> {
-        // const makeApiCall = async () => {
-        //     try {
-        //        const res = await axios({
-        //            method: "get",
-        //            url: "https://api.esv.org/v3/passage/text/?q=Psalm+11:35",
-        //            headers: {
-        //                Authorization: 'Token ${apiKey}'
-        //            },
-        //            params: {
-        //                'include-short-copyright': false
-        //            }
-        //        })
-        //         console.log(res.data)
-        //     }catch(err){
-        //         console.error(err)
-        //     }
-        // }
-        const makeApiCall = async ()=> {
-            try {
-                const res = await axios(`${apiUrl}/api/books`)
-                console.log(res.data)
-                setPlan(res.data[randomNum])
-            } catch (error) {
-                console.error();
-            }
-        }
-        makeApiCall()
-    },[])
-    */
+   
     return (
         <div>
+         
+    <Alert variant="filled" severity="info">
+        <p style={{"fontWeight": "700"}}>You must enable cookies!</p>
+    This website uses cookies to give you a relevant experience. By enabling cookies you agree to allow cookies to be placed. To get more information about cookies and your personal data processing, please check out our Privacy Policy.
+</Alert>
             <h4>Get bible verses based on your current mood!</h4>
             {user.user ? (<button onClick={logout}>Log Out</button>) : (
                 <>

@@ -1,0 +1,26 @@
+.settings-ctn {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+.settings-ctn div {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #D5E2DE;
+    border-top: 1px solid #9AB0A7;
+    border-bottom: 1px solid #9AB0A7;
+}
+.settings-ctn div a {
+    text-decoration: none;
+    font-size: 25px;
+}
+.settings-ctn div button {
+    outline: none;
+    border: none;
+    font-size: 25px;
+    background-color: #D5E2DE;
+    color: red;
+}

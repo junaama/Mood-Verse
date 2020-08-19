@@ -5,14 +5,14 @@ import Errors from '../errors/errors'
 import UserContext from '../../context/context'
 import apiUrl from '../../apiConfig.js'
 import './login.css'
-const Login = () => {
+const Login = (props) => {
   const [input, setInput] = useState({
     email: "",
     password: "",
   });
   const [errors, setErrors] = useState();
   const history = useHistory()
-  const {setUser} = useContext(UserContext)
+  const {setUser, setUserId} = useContext(UserContext)
 
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -29,12 +29,16 @@ const Login = () => {
       })
       setUser({
         token: loginRes.data.token,
-        user: loginRes.data.user
+        user: loginRes.data.user,
       })
+      // setUserId(loginRes.data.user.id)
+      document.cookie = "userId=" + loginRes.data.user.id
+      // document.cookie = loginRes.data.user.id
       localStorage.setItem("auth-token", loginRes.data.token)
       history.push('/')
     }catch(err){
-      err.response.data.msg && setErrors(err.response.data.msg)
+      // err.response.data.msg && setErrors(err.response.data.msg)
+      err && setErrors(err)
     }
 
   };
