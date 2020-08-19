@@ -1,6 +1,6 @@
 .verse-dash {
-  /* padding: 25px; */
-  text-align: center;
+  padding: 25px;
+
   margin: 0 auto;
 }
 .vrs-ctn {
@@ -20,6 +20,7 @@
   max-height: 80px;
   align-items: flex-end;
   border: 1px solid #9ab0a7;
+
 }
 .vrs-divider div {
   border: 1px solid #9ab0a7;
@@ -42,4 +43,11 @@ background: transparent
 }
 .vrs {
   padding: 10px;
+  text-align: center;
+}
+#set-center {
+  text-align: center;
+}
+#vrs-btn {
+  text-align: center;
 }

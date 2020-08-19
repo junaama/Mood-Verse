@@ -5,7 +5,7 @@ import Errors from '../errors/errors'
 import UserContext from '../../context/context'
 import apiUrl from '../../apiConfig.js'
 import './login.css'
-const Login = (props) => {
+const Login = () => {
   const [input, setInput] = useState({
     email: "",
     password: "",
@@ -36,7 +36,6 @@ const Login = (props) => {
       history.push('/')
     }catch(err){
       err.response.data.msg && setErrors(err.response.data.msg)
-      // err && setErrors(err)
     }
 
   };

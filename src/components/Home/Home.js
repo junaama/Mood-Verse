@@ -5,7 +5,13 @@ import UserContext from "../../context/context";
 import Header from "../Layout/Header";
 import "./home.css";
 import TextLoop from "react-text-loop";
-
+import {
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from "reactstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
@@ -16,10 +22,11 @@ const Home = (props) => {
   const history = useHistory();
 
   const voiceCommands = () => {
-    recognition.start()
-    console.log("voice start")
+    if (isRecording) {
+      return;
+    }
+    recognition.start();
     recognition.onstart = () => {
-      console.log("voice onstart")
       setIsRecording(true);
     };
   };
@@ -86,17 +93,19 @@ const Home = (props) => {
       props.setMood(transcript);
     }
     setTimeout(() => {
-      console.log('time')
       recognition.start();
     }, 500);
     recognition.onspeechend = () => {
       recognition.stop();
-      setIsRecording(false)
-      console.log("voice stopped");
+      setIsRecording(false);
       history.push("/verse");
     };
   };
-
+  const setDropdownMood = (e) => {
+    const currentMood = e.target.innerText.toLowerCase();
+    props.setMood(currentMood);
+    history.push("/verse");
+  };
 
   return (
     <div className="home-ctn">
@@ -130,19 +139,94 @@ const Home = (props) => {
             />{" "}
             Today?
           </div>
-          <div className="btn-ctn-ctn">
-            <div className={isRecording ? "btn-ctn is-recording is-blinking" : "btn-ctn"}>
+          <div className="rs-dropdown">
             {" "}
-            <button
-              id="record-btn"
-              onClick={() => {
-                voiceCommands()
-              }}
-            >record
-            </button>
+            <UncontrolledDropdown>
+              <DropdownToggle
+                caret
+                style={{
+                  backgroundColor: "#fffd98",
+                  color: "black",
+                  fontSize: "20px",
+                }}
+              >
+                Moods
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem header>Select Your Mood</DropdownItem>
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Happy
+                </DropdownItem>
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Empathy
+                </DropdownItem>
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Thankful
+                </DropdownItem>
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Excited
+                </DropdownItem>
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Peaceful
+                </DropdownItem>
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Joyful
+                </DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Angry
+                </DropdownItem>
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Sad
+                </DropdownItem>
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Frustrated
+                </DropdownItem>
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Worried
+                </DropdownItem>
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Vengeful
+                </DropdownItem>
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Jealous
+                </DropdownItem>
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Heartbroken
+                </DropdownItem>
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Apathetic
+                </DropdownItem>
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Annoyed
+                </DropdownItem>
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Confused
+                </DropdownItem>
+                <DropdownItem onClick={(e) => setDropdownMood(e)}>
+                  Uncomfortable
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
           </div>
+          <div className="btn-ctn-ctn">
+            <div
+              className={
+                isRecording ? "btn-ctn is-recording is-blinking" : "btn-ctn"
+              }
+            >
+              {" "}
+              <button
+                id="record-btn"
+                onClick={() => {
+                  voiceCommands();
+                }}
+              >
+                record
+              </button>
+            </div>
           </div>
-
+          
         </>
       ) : (
         <>

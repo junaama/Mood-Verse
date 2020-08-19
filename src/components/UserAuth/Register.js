@@ -5,7 +5,7 @@ import axios from "axios";
 import Errors from "../errors/errors";
 import apiUrl from "../../apiConfig";
 import "./register.css";
-const Register = (props) => {
+const Register = () => {
   const [input, setInput] = useState({
     username: "",
     email: "",

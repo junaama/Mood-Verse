@@ -61,7 +61,7 @@ const Verse = (props) => {
         </>
       );
     } else {
-      return <p>Set your current mood in the home page!</p>;
+      return <p id="set-center">Set your current mood in the home page!</p>;
     }
   };
 

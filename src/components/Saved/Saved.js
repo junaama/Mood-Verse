@@ -40,7 +40,6 @@ const Saved = () => {
                 
                     temp.push(verseRes.data)
                 })
-                console.log("temp", temp)
                 setSavedVerses(temp)
         
             } catch (error) {
@@ -51,7 +50,6 @@ const Saved = () => {
     },[userId])
 
     const result = savedVerses.map((item, i)=> {
-        console.log(item)
         if(!item){
             return (
                 <>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios'
 import './set.css'
+import apiUrl from '../../apiConfig'
 const Feedback = () => {
   const [input, setInput] = useState({
     name: "",
@@ -17,11 +18,10 @@ const Feedback = () => {
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
-  console.log(input)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3000/api/send", input
+    axios.post(`${apiUrl}/api/send`, input
       ).then((res)=>{
             alert("Message Sent.")
             resetForm()
