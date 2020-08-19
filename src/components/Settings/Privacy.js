@@ -61,7 +61,7 @@ const Privacy = ()=> {
           <bdt className="question">
             <a
               href="https://moodverse.netlify.app"
-              target="_blank"
+              
               data-custom-class="link"
             >
               https://moodverse.netlify.app
@@ -2472,7 +2472,7 @@ const Privacy = ()=> {
                         <bdt className="question">
                           <a
                             href="https://moodverse.netlify.app/feedback"
-                            target="_blank"
+                           
                             data-custom-class="link"
                           >
                             https://moodverse.netlify.app/feedback
@@ -2962,7 +2962,7 @@ const Privacy = ()=> {
                             <bdt className="question">
                               <a
                                 href="https://moodverse.netlify.app/feedback"
-                                target="_blank"
+                               
                                 data-custom-class="link"
                               >
                                 https://moodverse.netlify.app/feedback

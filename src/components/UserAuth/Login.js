@@ -12,7 +12,7 @@ const Login = (props) => {
   });
   const [errors, setErrors] = useState();
   const history = useHistory()
-  const {setUser, setUserId} = useContext(UserContext)
+  const {setUser} = useContext(UserContext)
 
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -31,9 +31,7 @@ const Login = (props) => {
         token: loginRes.data.token,
         user: loginRes.data.user,
       })
-      // setUserId(loginRes.data.user.id)
       document.cookie = "userId=" + loginRes.data.user.id
-      // document.cookie = loginRes.data.user.id
       localStorage.setItem("auth-token", loginRes.data.token)
       history.push('/')
     }catch(err){

@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, } from 'react'
 import {useHistory} from 'react-router-dom'
 import UserContext from '../../context/context'
 
@@ -6,7 +6,7 @@ import { Alert } from '@material-ui/lab';
 
 const Landing = () => {
 
-    // const [plan, setPlan] = useState([])
+
     const {user, setUser} = useContext(UserContext)
     const history = useHistory()
     const register = () => history.push('/register')
@@ -18,7 +18,7 @@ const Landing = () => {
             id: undefined
         })
         localStorage.setItem("auth-token", "")
-        document.cookie = "userId=" + "";
+        document.cookie = "userId=";
         console.log("in logout", document.cookie)
     }
    

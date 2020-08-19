@@ -30,7 +30,7 @@ const Verse = (props) => {
       await axios({
         method: "PUT",
         url: `${apiUrl}/api/users/${userId}/addVerse/${verseId}`,
-        data: { ["mood"]: props.mood },
+        data: { "mood": props.mood },
       });
     } catch (error) {
       console.error(error);
