@@ -1,5 +1,5 @@
 import React,{useContext} from 'react'
-import {useHistory, Redirect} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import './settings.css'
 import UserContext from '../../context/context'
 import axios from 'axios'
@@ -20,11 +20,11 @@ const Settings = () => {
         history.push('/')
     }
     const destroy = async() => {
-       const res = await axios({
+       await axios({
            url: `${apiUrl}/api/users/delete/${userId}`,
            method: "DELETE"
        })
-       return (<Redirect to="/"/>)
+       history.push('/')
     }
     return (
        <div className="settings-ctn">
