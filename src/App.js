@@ -11,7 +11,7 @@ import "./App.css";
 import apiUrl from './apiConfig.js'
 import axios from 'axios'
 import Saved from './components/Saved/Saved'
-import UpdateSave from './components/Saved/UpdateSave'
+
 import Settings from './components/Settings/Settings'
 import Terms from './components/Settings/Terms'
 import Privacy from './components/Settings/Privacy'
@@ -64,7 +64,7 @@ function App() {
           path="/home"
           render={(props) => <Home {...props} setMood={setMood} />}
         />
-        <Route path=":id/addVerse/:id" component={UpdateSave}/>
+      
         <Route
           exact path="/verse/"
           render={(props) => <Verse {...props} mood={mood} setSavedVerses={setSavedVerses}/>}
