@@ -1,7 +1,7 @@
 let apiUrl;
 
 const apiUrls = {
-    production: "https://cors-anywhere.herokuapp.com/https://mood-verse-app.herokuapp.com",
+    production: "https://mood-verse-app.herokuapp.com",
     development: "http://localhost:3000"
 }
 
