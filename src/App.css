@@ -1,4 +1,4 @@
-
+/* 
 html, body {
     margin: 0px;
     padding: 0px;
@@ -14,7 +14,7 @@ body {
     width: 100%;
     display: table-cell;
     
-}
+} */
 
 *, *:before, *:after {
     box-sizing: border-box;
