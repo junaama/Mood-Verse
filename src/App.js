@@ -48,7 +48,7 @@ function App() {
     };
     checkLoggedIn();
   }, []);
-
+  setMood("happy")
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div className="App">
