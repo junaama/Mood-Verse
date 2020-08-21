@@ -54,31 +54,31 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/" component={Landing} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
+          <Route  path="/register" component={Register} />
+          <Route  path="/login" component={Login} />
           <Route
-            exact
+            
             path="/home"
             render={(props) => <Home {...props} setMood={setMood} />}
           />
 
           <Route
-            exact
+            
             path="/verse/"
             render={(props) => (
               <Verse {...props} mood={mood} setSavedVerses={setSavedVerses} />
             )}
           />
           <Route
-            exact
+            
             path="/saved"
             render={(props) => <Saved {...props} savedVerses={savedVerses} />}
           />
-          <Route exact path="/settings" component={Settings} />
-          <Route exact path="/tc" component={Terms} />
-          <Route exact path="/pp" component={Privacy} />
-          <Route exact path="/feedback" component={Feedback} />
-          <Route exact path="/about" component={About} />
+          <Route  path="/settings" component={Settings} />
+          <Route  path="/tc" component={Terms} />
+          <Route  path="/pp" component={Privacy} />
+          <Route  path="/feedback" component={Feedback} />
+          <Route  path="/about" component={About} />
         </Switch>
         <Nav />
       </div>
