@@ -27,7 +27,7 @@ const Verse = (props) => {
       }
     };
     makeApiCall();
-  }, []);
+  }, [props.mood]);
 
   const userId = document.cookie.split("=")[1];
 
