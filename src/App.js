@@ -17,7 +17,8 @@ import Terms from "./components/Settings/Terms";
 import Privacy from "./components/Settings/Privacy";
 import Feedback from "./components/Settings/Feedback";
 function App() {
-  const [mood, setMood] = useState("happy");
+  // const [mood, setMood] = useState("happy");
+  const mood = 'happy';
   const [user, setUser] = useState({
     token: undefined,
     user: undefined,
