@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router";
 import UserContext from "./context/context";
-import Home from "./components/Home/Home";
+// import Home from "./components/Home/Home";
 import Verse from "./components/Verse/Verse";
 import Nav from "./components/Nav/Nav";
 import Landing from "./components/Layout/Landing";
@@ -56,11 +56,11 @@ function App() {
           <Route exact path="/" component={Landing} />
           <Route  path="/register" component={Register} />
           <Route  path="/login" component={Login} />
-          <Route
+          {/* <Route
             
             path="/home"
             render={(props) => <Home {...props} setMood={setMood} />}
-          />
+          /> */}
 
           <Route
             
